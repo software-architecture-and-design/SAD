@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @homepage.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @homepage.lastname %>
+</p>
+
+<p>
+  <strong>Student ID:</strong>
+  <%= @homepage.studentid %>
+</p>
+
+<p>
+  <strong>Major:</strong>
+  <%= @homepage.major %>
+</p>
+
+<%= link_to 'Edit', edit_homepage_path(@homepage) %> |
+<%= link_to 'Back', homepages_path %>
