@@ -1,0 +1,61 @@
+<style>
+.course_table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+.course_table td, .course_table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.course_table tr:nth-child(even){background-color: #f2f2f2;}
+
+.course_table tr:hover {background-color: #ddd;}
+
+.course_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+}
+</style>
+
+<p id="notice"><%= notice %></p>
+
+<h1>CSIM Courses Available</h1>
+</br>
+</br>
+<table class="course_table">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Instructor</th>
+      <th>Semester</th>
+      <th colspan="3">Manage</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.code %></td>
+        <td><%= course.title %></td>
+        <td><%= course.instructor %></td>
+        <td><%= course.semester %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'New Course', { action: "new" }, method: "get"%>
