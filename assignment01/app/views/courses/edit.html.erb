@@ -1,6 +1,18 @@
 <h1>Editing Course</h1>
 
-<%= render 'form', course: @course %>
+<!--<%= render 'form', course: @course %>-->
+
+<%= form_for @course do |f| %>
+
+    Code: <%= f.text_field :code %><br />
+    Title: <%= f.text_field :title %><br />
+    Instructor : <%= f.select :instructor, Instructor.all.collect { |i| [ i.title+" "+i.first_name+" "+i.last_name, i.title+" "+i.first_name+" "+i.last_name ] }, include_blank: true %><br />
+    Semester : <%= f.select :semester, options_for_select([["January", "January"], ["August", "August"]])%><br />
+    
+    
+    <%= f.submit %>
+<% end %>
+
 
 <%= link_to 'Show', @course %> |
 <%= link_to 'Back', courses_path %>

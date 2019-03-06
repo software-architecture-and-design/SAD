@@ -1,0 +1,21 @@
+<h1>New Instructor</h1>
+
+<!-- <%= render 'form', instructor: @instructor %> -->
+
+<%= form_for @instructor do |f| %>
+
+    Title: <%= f.text_field :title %><br />
+    First name: <%= f.text_field :first_name %><br />
+    Last name: <%= f.text_field :last_name %><br />
+    Email: <%= f.text_field :email %><br />
+    Phone number (optional): <%= f.text_field :phone_number %><br />
+    Office room (optional): <%= f.text_field :office_room %><br />
+    Department (optional): <%= f.text_field :department %><br />
+    School (optional): <%= f.select :school, options_for_select([["SET", "SET"], ["SERD", "SERD"], ["SOM", "SOM"]]), include_blank: true%><br />
+    
+    
+    <%= f.submit %>
+<% end %>
+
+
+<%= link_to 'Back', instructors_path %>

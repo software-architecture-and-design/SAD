@@ -29,6 +29,8 @@
 
 <h1>CSIM Courses Available</h1>
 </br>
+<%= link_to 'See instructor lists', instructors_url %>
+</br>
 </br>
 <table class="course_table">
   <thead>
@@ -46,7 +48,7 @@
       <tr>
         <td><%= course.code %></td>
         <td><%= course.title %></td>
-        <td><%= course.instructor %></td>
+        <td><%= course.instructor%></td>
         <td><%= course.semester %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
