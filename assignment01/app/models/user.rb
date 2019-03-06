@@ -3,4 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  
+  belongs_to :role
+ 
+  def instructor?
+    self.role.name == "instructor" if !self.role.blank?
+  end
+  def student?
+    self.role.name == "student" if !self.role.blank?
+  end
+
 end

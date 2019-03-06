@@ -57,5 +57,10 @@
 </table>
 
 <br>
+<% if user_signed_in? && current_user.role.name == 'instructor' %>
+  
+    <%= button_to 'New Course', { action: "new" }, method: "get"%>
+ 
+<%end%>
+  
 
-<%= button_to 'New Course', { action: "new" }, method: "get"%>
