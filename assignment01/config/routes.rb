@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # get 'courses', to: 'courses#index', as: 'coursess'
   get '/homepage', to: 'userfacade#homepage', as: 'homepage'
   get '/userlists', to: 'state#userlists', as: 'userlists'
-  
-  
+  get '/useredit', to: 'state#show', as: 'edits'
+  post '/state_change', to: 'courses#change_state'
+
 end
