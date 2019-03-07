@@ -23,12 +23,42 @@
 
   <div class="field">
     <%= form.label :instructor %>
-    <%= form.text_field :instructor %>
+    <%= form.select :instructor, User.where(role_id: 3).collect { |i| [ i.firstname+" "+i.lastname, i.firstname+" "+i.lastname ] }, include_blank: true %><br />
   </div>
 
   <div class="field">
     <%= form.label :semester %>
-    <%= form.text_field :semester %>
+    <%= form.select :semester, options_for_select([["January", "January"], ["August", "August"]])%><br />
+  </div>
+
+  <div class="field">
+    <%= form.label :credit %>
+    <%= form.number_field :credit, min:0, value:0 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room %>
+    <%= form.text_field :room %>
+  </div>
+
+  <div class="field">
+    <%= form.label :midterm %>
+    <%= form.number_field :midterm, min:0, value:0 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :final %>
+    <%= form.number_field :final, min:0, value:0 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assignment %>
+    <%= form.number_field :assignment, min:0, value:0 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project %>
+    <%= form.number_field :project, min:0, value:0 %>
   </div>
 
   <div class="actions">

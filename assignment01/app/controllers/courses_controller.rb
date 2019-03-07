@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  # load_and_authorize_resource
   # GET /courses
   # GET /courses.json
   def index
@@ -24,12 +25,24 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(course_params)
+    # @course = Course.new(course_params)
+
+    CourseBuilder.build do |builder|
+      builder.set_code(course_params['code'])
+      builder.set_title(course_params['title'])
+      builder.set_instructor(course_params['instructor'])
+      builder.set_semester(course_params['semester'])
+      builder.set_credit(course_params['credit'])
+      builder.set_room(course_params['room'])
+      builder.set_evaluation(course_params['midterm'], course_params['final'], course_params['assignment'], course_params['project'])
+
+      @course = builder.course
+    end
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course }
+        format.html { redirect_to courses_url, notice: 'Course was successfully created.' }
+        format.json { render :index, status: :created, location: @course }
       else
         format.html { render :new }
         format.json { render json: @course.errors, status: :unprocessable_entity }
@@ -69,6 +82,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:code, :title, :instructor, :semester)
+      params.require(:course).permit(:code, :title, :instructor, :semester, :credit, :room, :midterm, :final, :assignment, :project)
     end
 end

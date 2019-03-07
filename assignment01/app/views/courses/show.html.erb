@@ -20,5 +20,36 @@
   <%= @course.semester %>
 </p>
 
+<p>
+  <strong>Credit:</strong>
+  <%= @course.credit %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @course.room %>
+</p>
+
+<p>
+  <strong>Midterm:</strong>
+  <%= @course.midterm %> %
+</p>
+
+<p>
+  <strong>Final:</strong>
+  <%= @course.final %> %
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @course.assignment %> %
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @course.project %> %
+</p>
+
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

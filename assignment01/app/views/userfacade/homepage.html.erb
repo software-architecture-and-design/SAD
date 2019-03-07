@@ -1,0 +1,71 @@
+<!-- for ้handle stylesheet with CSS or something with front - end -->
+<style>
+	#rcorners2 {
+    border-radius: 15px 50px 30px;
+    border: 12px solid grey;
+    background: white;
+    padding: 20px; 
+    width: 600px;
+    height: 550px; 
+    /* opacity: 0.2; */
+
+}
+body {
+    background-image: url(/img2.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#p{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+h1{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+</style>
+
+<html>
+<head>	
+</head>
+<body>
+ <div class="container">
+	<div class="row">
+		<div class = "col-sm-6 col-sm-offset-3">
+        <div id="rcorners2">
+        
+
+    <h1 class="text-center">  Welcome to CSIM  </h1>
+	
+<!-- for first table-->
+    <% if user_signed_in? %>
+        Welcome <%= current_user.email %>! Not you? and you're <%= current_user.role.name %>
+        <br>
+        <%# <%= link_to "Sign out", destroy_user_session_path, method: :delete %>  
+        <br>
+        
+        <%# <% else %> 
+        <%# <%= link_to "Sign in", new_user_session_path %> 
+    <% end %>
+
+ 	
+ 	
+     <ul >
+     <li > CSIM is a Department of AIT </li>
+     <li>This website will show about course list in CSIM department</li>
+     <li>CS is Computer Science</li>
+     <li>IM is Information Management</li>
+     <li>So CSIM is a Computer Science and Information Management</li>
+     <li>CSIM is department of SET ( School of Engineering and Technology) </li>
+     </ul>
+	<br>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+</body>
+</html>
+
+
