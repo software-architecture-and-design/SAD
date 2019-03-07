@@ -34,8 +34,6 @@ class Ability
             can :manage, :all
             can :dashboard
             can :access, :rails_admin
-        elsif user.student?
-            can :read, Course
         else
             can :read, Course
         end
