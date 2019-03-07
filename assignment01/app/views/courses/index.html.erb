@@ -43,6 +43,7 @@
       <th>Final</th>
       <th>Assignment</th>
       <th>Project</th>
+      <th>Type</th>
       <th colspan="3">Manage</th>
     </tr>
   </thead>
@@ -60,6 +61,7 @@
         <td><%= course.final %> %</td>
         <td><%= course.assignment%> %</td>
         <td><%= course.project %> %</td>
+        <td><%= course.aasm_state %> <%= button_to 'change', {:controller => "courses", :action => "change_state", :id => course.id} %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>

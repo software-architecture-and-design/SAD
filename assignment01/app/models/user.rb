@@ -7,6 +7,9 @@ class User < ApplicationRecord
   
   belongs_to :role
  
+  def admin?
+    self.role.name == "admin" if !self.role.blank?
+  end
   def instructor?
     self.role.name == "instructor" if !self.role.blank?
   end

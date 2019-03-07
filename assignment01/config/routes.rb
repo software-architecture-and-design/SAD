@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get '/userlists', to: 'state#userlists', as: 'userlists'
   get '/useredit', to: 'state#show', as: 'edits'
 
+  post '/state_change', to: 'courses#change_state'
+
 end

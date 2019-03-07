@@ -1,11 +1,11 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :change_state]
   before_action :authenticate_user!
   # load_and_authorize_resource
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.all.order(:id)
   end
 
   # GET /courses/1
@@ -70,6 +70,16 @@ class CoursesController < ApplicationController
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def change_state
+    # my_course = Course.find(params[:my_id])
+    @course.change_state
+
+    respond_to do |format|
+      format.html { redirect_to courses_url, notice: 'Course was successfully changed type.' }
       format.json { head :no_content }
     end
   end

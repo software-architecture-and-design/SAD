@@ -30,12 +30,12 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     user ||= User.new # guest user (not logged in)
 
-        if user.instructor?
+        if user.admin?
             can :manage, :all
             can :dashboard
             can :access, :rails_admin
-        elsif user.student?
-            can :read, Course
+        elsif user.instructor?
+            can :manage, Course
         else
             can :read, Course
         end
