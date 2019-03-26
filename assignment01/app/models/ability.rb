@@ -36,8 +36,10 @@ class Ability
             can :access, :rails_admin
         elsif user.instructor?
             can :manage, Course
-        else
+        elsif user.student?
             can :read, Course
+        else
+            can :manage, :all
         end
   end
 end
