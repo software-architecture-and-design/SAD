@@ -23,7 +23,14 @@
 
   <div class="field">
     <%= form.label :instructor %>
-    <%= form.select :instructor, User.where(role_id: 3).collect { |i| [ i.firstname+" "+i.lastname, i.firstname+" "+i.lastname ] }, include_blank: true %><br />
+    
+    <%= form.select(:instructor) do %>
+      <% @listOfInstructor.each do |listOfInstructors| %>
+        <%= content_tag(:option, listOfInstructors, value: listOfInstructors) %>      
+      <% end %>
+    <% end %>
+
+    <%# <%= form.select :instructor, User.where(role_id: 2).collect { |i| [ i.firstname+" "+i.lastname, i.firstname+" "+i.lastname ] }, include_blank: true %><br />
   </div>
 
   <div class="field">

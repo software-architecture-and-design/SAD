@@ -35,6 +35,22 @@ class Ability
             can :dashboard
             can :access, :rails_admin
         elsif user.instructor?
+
+            # can :index, Course
+            # can :read, Course
+            # can :edit, Course
+            # can :update, Course
+            # can :create, Course
+            # cannot use because when add not passing id use later
+            # can :change_state, Course do |course|
+            #     course.try(:user) == user
+            # end
+            # can :destroy, Course do |course|
+            #     course.try(:user) == user
+            # end
+            # can :update, Course do |course|
+            #     course.try(:user) == user
+            # end
             can :manage, Course
         elsif user.student?
             can :read, Course

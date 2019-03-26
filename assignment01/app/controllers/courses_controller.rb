@@ -16,10 +16,35 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+
+    # ------ fetch all user ------
+    @allUser = User.all
+
+    # ------ create array for collected only instructors -------
+    @listOfInstructor = Array.new
+
+    # ------ put name of each instructors in to array of instructors --------
+    @instructorUser = @allUser.each do |instructorUsers|
+      if instructorUsers.role.name == "instructor"
+        @listOfInstructor.push(instructorUsers.firstname)
+      end
+    end
   end
 
   # GET /courses/1/edit
   def edit
+    # ------ fetch all user ------
+    @allUser = User.all
+
+    # ------ create array for collected only instructors -------
+    @listOfInstructor = Array.new
+
+    # ------ put name of each instructors in to array of instructors --------
+    @instructorUser = @allUser.each do |instructorUsers|
+      if instructorUsers.role.name == "instructor"
+        @listOfInstructor.push(instructorUsers.firstname)
+      end
+    end
   end
 
   # POST /courses
