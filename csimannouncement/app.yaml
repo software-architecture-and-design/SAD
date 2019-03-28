@@ -3,7 +3,8 @@ env: flex
 runtime: ruby
 
 env_variables:
-  SECRET_KEY_BASE: ['8816488602015f4fecede4a080f678b737cba512096b56453766c9821606d42aa7574abfa88afc0cc63cd78a309ecc0f767230f00122888ed193096eaa560a6f']
+  SECRET_KEY_BASE: ab980735195896a7c95a1d7cfe6415cafc8497ac23bd2e2c174b5522618959ac072c19d8577b7cf9918fa5e406f162a4411c1a1e15432f52c735e13d9665a829
 
 beta_settings:
-  cloud_sql_instances: ['csimnews:asia-east1:csimnews']
+  cloud_sql_instances: csimnews:asia-east1:csimnews
+

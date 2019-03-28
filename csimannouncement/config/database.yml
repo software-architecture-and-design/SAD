@@ -27,8 +27,7 @@ production:
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: "['csimnews']"
-  password: "['test1112']"
-  database: "csimnews"
-  host:   "/cloudsql/['csimnews:asia-east1:csimnews']"
-
+  username: csimnews
+  password: test1112
+  database: csimnews
+  host:   /cloudsql/csimnews:asia-east1:csimnews
