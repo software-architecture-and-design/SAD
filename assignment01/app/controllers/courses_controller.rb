@@ -5,12 +5,16 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all.order(:id)
+    query = params[:q]
+    @courses = query ? Course.search(query) : Course.all.order(:id)
+
+    render json: @courses
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    render json: @course
   end
 
   # GET /courses/new

@@ -1,3 +1,17 @@
-<p>
-  course-details works!
-</p>
+<div style="text-align: center;">
+  <a routerLink="/courses"><button>Back</button></a>
+</div>
+<h1>
+    {{ course.title }}
+</h1>
+<p><strong>Code : {{ course.code }}</strong></p>
+<p><strong>Title : {{ course.title }}</strong></p>
+<p><strong>Instructor : {{ course.instructor }}</strong></p>
+<p><strong>Semester : {{ course.semester }}</strong></p>
+<p><strong>Credit : {{ course.credit }}</strong></p>
+<p><strong>Room : {{ course.room }}</strong></p>
+<p><strong>Midterm : {{ course.midterm }}</strong></p>
+<p><strong>Final : {{ course.final }}</strong></p>
+<p><strong>Assigment : {{ course.assignment }}</strong></p>
+<p><strong>Project : {{ course.project }}</strong></p>
+<p><strong>Type : {{ course.aasm_state }}</strong></p>

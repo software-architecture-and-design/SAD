@@ -1,4 +1,5 @@
 export class Course {
+    id: number;
     code: string;
     title: string;
     instructor: string;
@@ -9,12 +10,13 @@ export class Course {
     final: number;
     assignment: number;
     project: number;
+    aasm_state: string;
 
     constructor(params?: Partial<Course>) {
         Object.assign(this, params);
     }
     static parseFrom(object: any): Course {
-        const { code, title, instructor, semester, credit, room, midterm, final, assignment, project } = object;
-        return new Course({ code, title, instructor, semester, credit, room, midterm, final, assignment, project })
+        const { id, code, title, instructor, semester, credit, room, midterm, final, assignment, project, aasm_state } = object;
+        return new Course({ id, code, title, instructor, semester, credit, room, midterm, final, assignment, project, aasm_state })
     }
 }

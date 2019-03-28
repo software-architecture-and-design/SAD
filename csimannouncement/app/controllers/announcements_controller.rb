@@ -5,6 +5,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements.json
   def index
     @announcements = Announcement.all
+
+    render json: @announcements
   end
 
   # GET /announcements/1
@@ -15,6 +17,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/new
   def new
     @announcement = Announcement.new
+
+    render json: @announcement
   end
 
   # GET /announcements/1/edit
