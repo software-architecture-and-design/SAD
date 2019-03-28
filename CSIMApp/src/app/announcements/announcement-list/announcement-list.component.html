@@ -1,5 +1,5 @@
 <div *ngFor="let an of announcements">
-  <h1>{{ an.topic }}</h1>
+  <h4>{{ an.topic }}</h4>
   <p>{{ an.description }}</p>
-  <p><a routerLink="/announcements/{{ an.id }}"><button>see more</button></a></p>
+  <p><a routerLink="/announcements/{{ an.id }}"><button class="button button4">see more</button></a></p>
 </div>

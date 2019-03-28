@@ -2,6 +2,9 @@
     <input [formControl]="searchQuery" placeholder="Search course." />
 </div>
 <br />
+<br>
+<br>
+<br>
 
 <table>
   <thead>
@@ -32,7 +35,7 @@
       <td>{{ course.assignment }}</td>
       <td>{{ course.project }}</td>
       <td>{{ course.aasm_state }}</td>
-      <td><a routerLink="/courses/{{ course.id }}"><button>View</button></a></td>
+      <td><a routerLink="/courses/{{ course.id }}"><button class="button button4">View</button></a></td>
     </tr>
   </tbody>
 </table>
