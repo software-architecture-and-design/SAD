@@ -1,3 +1,8 @@
+<div>
+    <input [formControl]="searchQuery" placeholder="Search course." />
+</div>
+<br />
+
 <table>
   <thead>
     <tr>
@@ -5,6 +10,13 @@
       <th>Title</th>
       <th>Instructor</th>
       <th>Semenster</th>
+      <th>Credit</th>
+      <th>Room</th>
+      <th>Midterm</th>
+      <th>Final</th>
+      <th>Assignment</th>
+      <th>Project</th>
+      <th>Type</th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +25,14 @@
       <td>{{ course.title }}</td>
       <td>{{ course.instructor }}</td>
       <td>{{ course.semester }}</td>
-      <!--<td><a routerLink="/courses/{{ course.id }}"><button>View</button></a></td>-->
+      <td>{{ course.credit }}</td>
+      <td>{{ course.room }}</td>
+      <td>{{ course.midterm }}</td>
+      <td>{{ course.final }}</td>
+      <td>{{ course.assignment }}</td>
+      <td>{{ course.project }}</td>
+      <td>{{ course.aasm_state }}</td>
+      <td><a routerLink="/courses/{{ course.id }}"><button>View</button></a></td>
     </tr>
   </tbody>
 </table>

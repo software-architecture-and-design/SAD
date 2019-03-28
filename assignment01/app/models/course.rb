@@ -30,4 +30,8 @@ class Course < ApplicationRecord
 
     end
 
+    def self.search(query) 
+        where('title ILIKE ? OR code ILIKE ? OR instructor ILIKE ?', "%#{query}%", "%#{query}%", "%#{query}%")
+    end
+
 end

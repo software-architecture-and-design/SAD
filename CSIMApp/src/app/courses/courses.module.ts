@@ -8,11 +8,14 @@ import { CourseFormComponent } from './course-form/course-form.component';
 
 import { CourseService } from './shared/course.service';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [CourseListComponent, CourseDetailsComponent, CourseFormComponent],
   imports: [
     CommonModule,
     CoursesRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [CourseService]
 })
