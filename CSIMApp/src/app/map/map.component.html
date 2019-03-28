@@ -1,5 +1,25 @@
-<div>
-  <agm-map [(latitude)]="location.lat" [(longitude)]="location.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true" [zoomControl]="true" [(fitBounds)]='location.viewport'>
-    <agm-marker [(latitude)]="location.marker.lat" [(longitude)]="location.marker.lng" [markerDraggable]="location.marker.draggable" (dragEnd)='markerDragEnd($event)'></agm-marker>
-  </agm-map>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+<div class="row">
+  <div class="column" style="color:#4682B4;width:100px;" >
+  </div>
+  <div class="column" style="color:#4682B4;">
+    <h2> Map</h2>
+    <agm-map [(latitude)]="location.lat" [(longitude)]="location.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true" [zoomControl]="true" [(fitBounds)]='location.viewport'>
+      <agm-marker [(latitude)]="location.marker.lat" [(longitude)]="location.marker.lng" [markerDraggable]="location.marker.draggable" (dragEnd)='markerDragEnd($event)'></agm-marker>
+    </agm-map>
+  </div>
+  <div class="column" style="color:#A0522D;">
+    <h2>Address   <i class="material-icons" style="font-size:48px;color:red">place</i></h2>
+    <p>P.O. Box 4<br>
+58 Moo 9, Km. 42, Paholyothin Highway,<br>
+Klong Luang, Pathum Thani 12120<br>
+Thailand<br>
+Phone: (+66) 25245000, (+66) 25160110-44
+</p>
+  </div>
 </div>
